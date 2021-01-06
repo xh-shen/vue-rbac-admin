@@ -1,0 +1,103 @@
+// global transition css
+
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* breadcrumb transition */
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all .5s;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-move {
+  transition: all .5s;
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}
+
+.move-right-appear,
+.move-right-enter-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+.move-right-leave-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+.move-right-appear,
+.move-right-enter-active {
+  animation-name: moveRightIn;
+  animation-play-state: running;
+}
+.move-right-leave-active {
+  animation-name: moveRightOut;
+  animation-play-state: running;
+}
+.move-right-appear,
+.move-right-enter-active {
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+}
+.move-right-leave-active {
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes moveRightIn {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes moveRightOut {
+  0% {
+    transform-origin: 0 0;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
